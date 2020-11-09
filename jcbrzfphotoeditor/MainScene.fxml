@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jcbrzfphotoeditor.FXMLDocumentController">
+    <children>
+      <BorderPane prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <VBox prefHeight="165.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="Brightness" />
+                              <Slider fx:id="brightnessSlider" blockIncrement="0.1" majorTickUnit="0.25" max="2.0" maxWidth="400.0" minorTickCount="0" prefHeight="30.0" prefWidth="400.0" showTickMarks="true" value="1.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <padding>
+                              <Insets right="50.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="Saturation" />
+                              <Slider fx:id="saturationSlider" blockIncrement="0.1" majorTickUnit="0.25" max="1.0" maxWidth="400.0" minorTickCount="1" showTickMarks="true" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <padding>
+                              <Insets right="50.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="Sepia" />
+                              <Slider fx:id="sepiaSlider" blockIncrement="0.1" majorTickUnit="0.25" max="1.0" maxWidth="400.0" minorTickCount="0" showTickMarks="true" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <padding>
+                              <Insets right="50.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </bottom>
+         <center>
+            <ImageView fx:id="view" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <MenuBar prefHeight="35.0" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="load" mnemonicParsing="false" onAction="#handleOpen" text="Load Image" />
+                        <MenuItem fx:id="save" mnemonicParsing="false" onAction="#handleSave" text="Save Image" />
+                  </items>
+                </Menu>
+                <Menu fx:id="filterMenu" mnemonicParsing="false" text="Filters" />
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="about" mnemonicParsing="false" onAction="#loadAbout" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
+    </children>
+</AnchorPane>
